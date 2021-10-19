@@ -1,6 +1,15 @@
-# Set up locally
+# Basic Sample Hardhat Project
 
-1. Ensure you have npm installed https://docs.npmjs.com/downloading-and-installing-node-js-and-npm 
-2. Download and unzip file, or clone repo: ``` git clone https://github.com/intergalactic-trash/rugpull-game.git```
-3. Run```npm install``` in the same folder as the package.json file.
-4. ```npm start``` will start the app locally.
+This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+
+Try running some of the following tasks:
+
+```shell
+npx hardhat accounts
+npx hardhat compile
+npx hardhat clean
+npx hardhat test
+npx hardhat node
+node scripts/sample-script.js
+npx hardhat help
+```

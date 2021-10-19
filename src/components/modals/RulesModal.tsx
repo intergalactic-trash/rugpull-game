@@ -204,6 +204,7 @@ export default function RulesModal({ isOpen, onClose }: Props) {
                             lineHeight="1.1"
                         >
                             • If a key purchase fails, it is likely because the key price is increasing quickly.
+                            Resfresh the page and try again.
                         </Text>
                     </ListItem>
                 </UnorderedList>

@@ -1,5 +1,5 @@
 import { Button, Box, Text } from "@chakra-ui/react";
-import { useEthers, useEtherBalance, ChainId } from "@usedapp/core";
+import { useEthers, useEtherBalance } from "@usedapp/core";
 import { formatEther } from "@ethersproject/units";
 import Identicon from "../Identicon";
 
@@ -17,11 +17,43 @@ export default function ConnectButton({ handleOpenModal }: Props) {
     switchNetworkMumbai();
   }
 
+  // const switchNetworkMumbai = async () => {
+  //   try {
+  //     await window.ethereum.request({
+  //       method: "wallet_switchEthereumChain",
+  //       params: [{ chainId: "0x13881" }],
+  //     });
+  //   } catch (error) {
+  //     if (error.code === 4902) {
+  //       try {
+  //         await window.ethereum.request({
+  //           method: "wallet_addEthereumChain",
+  //           params: [
+  //             {
+  //               chainId: "0x13881",
+  //               chainName: "Mumbai",
+  //               rpcUrls: ["https://rpc-mumbai.maticvigil.com/"],
+  //               nativeCurrency: {
+  //                 name: "Matic",
+  //                 symbol: "Matic",
+  //                 decimals: 18,
+  //               },
+  //               blockExplorerUrls: ["https://mumbai.polygonscan.com/"],
+  //             },
+  //           ],
+  //         });
+  //       } catch (addError) {
+  //         alert(addError);
+  //       }
+  //     }
+  //   }
+  // }
+
   const switchNetworkMumbai = async () => {
     try {
       await window.ethereum.request({
         method: "wallet_switchEthereumChain",
-        params: [{ chainId: "0x13881" }],
+        params: [{ chainId: "0x89" }],
       });
     } catch (error) {
       if (error.code === 4902) {
@@ -30,15 +62,15 @@ export default function ConnectButton({ handleOpenModal }: Props) {
             method: "wallet_addEthereumChain",
             params: [
               {
-                chainId: "0x13881",
-                chainName: "Mumbai",
-                rpcUrls: ["https://rpc-mumbai.maticvigil.com/"],
+                chainId: "0x89",
+                chainName: "Polygon",
+                rpcUrls: ["https://polygon-rpc.com"],
                 nativeCurrency: {
                   name: "Matic",
                   symbol: "Matic",
                   decimals: 18,
                 },
-                blockExplorerUrls: ["https://mumbai.polygonscan.com/"],
+                blockExplorerUrls: ["https://polygonscan.com"],
               },
             ],
           });
@@ -51,7 +83,7 @@ export default function ConnectButton({ handleOpenModal }: Props) {
 
 
   
-  return account && chainId === 80001 ? (
+  return account && chainId === 137 ? (
     <Box
       display="flex"
       alignItems="center"
